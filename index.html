@@ -1,1 +1,361 @@
-<h1>Hola me llamo mario</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cúmulo Mountain Wear | Ropa de Montaña Local y Sostenible</title>
+    <style>
+        /* Estilos Generales */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #2b2d42;
+            line-height: 1.6;
+        }
+
+        /* Encabezado y Navegación */
+        header {
+            background-color: #1b263b;
+            color: #ffffff;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #e0e1dd;
+        }
+
+        .logo span {
+            color: #48cae4;
+        }
+
+        nav a {
+            color: #e0e1dd;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #48cae4;
+        }
+
+        nav a.segunda-mano-btn {
+            background-color: #2a9d8f;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: white;
+        }
+
+        nav a.segunda-mano-btn:hover {
+            background-color: #218380;
+        }
+
+        /* Banner Principal */
+        .hero {
+            background: linear-gradient(rgba(27, 38, 59, 0.7), rgba(27, 38, 59, 0.7)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            height: 60vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-main {
+            background-color: #e76f51;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-main:hover {
+            background-color: #d65a31;
+        }
+
+        /* Secciones */
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1b263b;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Sobre la marca */
+        .about-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 4rem;
+            border-left: 5px solid #2a9d8f;
+        }
+
+        /* Parrilla de Productos */
+        .grid-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #e76f51;
+            margin-bottom: 1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            width: fit-content;
+        }
+
+        .badge-nuevo {
+            background-color: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .badge-reusado {
+            background-color: #d1fae5;
+            color: #047857;
+        }
+
+        .btn-card {
+            margin-top: auto;
+            background-color: #1b263b;
+            color: white;
+            border: none;
+            padding: 0.6rem;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .btn-card:hover {
+            background-color: #415a77;
+        }
+
+        /* Sección Segunda Mano */
+        .segunda-mano-section {
+            background-color: #e8f5e9;
+            padding: 3rem 1.5rem;
+            border-radius: 15px;
+            margin: 4rem 0;
+        }
+
+        /* Pie de Página */
+        footer {
+            background-color: #1b263b;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: #adb5bd;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">CÚMULO <span>Outdoor</span></div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#marca">Nuestra Marca</a>
+            <a href="#nuevos">Colección Nueva</a>
+            <a href="#segunda-mano" class="segunda-mano-btn">Re-Cúmulo (2ª Mano)</a>
+        </nav>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="hero" id="inicio">
+        <h1>Ropa Técnica Diseñada en Granada</h1>
+        <p>Prendas de montaña sostenibles, creadas para durar y preparadas para una segunda vida.</p>
+        <a href="#nuevos" class="btn-main">Ver Colección</a>
+    </section>
+
+    <div class="container">
+
+        <!-- Sobre la Marca Local -->
+        <section class="about-box" id="marca">
+            <h2>Nuestra Filosofía Local</h2>
+            <p><strong>Cúmulo Mountain Wear</strong> es una pequeña marca independiente nacida a los pies de Sierra Nevada, en Granada. No producimos en masa ni seguimos grandes cadenas internacionales. Diseñamos material de montaña ético, resistente al clima más exigente y comprometido con la economía circular.</p>
+        </section>
+
+        <!-- Productos Nuevos -->
+        <section id="nuevos">
+            <h2 class="section-title">Colección Nueva</h2>
+            <p class="section-subtitle">Diseño propio con materiales reciclados y máxima protección térmica.</p>
+            
+            <div class="grid-productos">
+                <!-- Producto 1 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=600&q=80" alt="Chaqueta Técnica">
+                    <div class="card-content">
+                        <span class="badge badge-nuevo">Nueva Colección</span>
+                        <h3 class="card-title">Chaqueta Impermeable "Veleta"</h3>
+                        <p style="font-size:0.9rem; color:#555; margin-bottom: 0.5rem;">Membrana recilada de 3 capas, corta-vientos e impermeable.</p>
+                        <div class="card-price">145,00 €</div>
+                        <button class="btn-card">Añadir al carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&w=600&q=80" alt="Forro Polar">
+                    <div class="card-content">
+                        <span class="badge badge-nuevo">Nueva Colección</span>
+                        <h3 class="card-title">Forro Polar Térmico "Mulhacén"</h3>
+                        <p style="font-size:0.9rem; color:#555; margin-bottom: 0.5rem;">Fabricado 100% con plásticos marinos recuperados.</p>
+                        <div class="card-price">65,00 €</div>
+                        <button class="btn-card">Añadir al carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&w=600&q=80" alt="Pantalón Montaña">
+                    <div class="card-content">
+                        <span class="badge badge-nuevo">Nueva Colección</span>
+                        <h3 class="card-title">Pantalón Trekking "Alpujarra"</h3>
+                        <p style="font-size:0.9rem; color:#555; margin-bottom: 0.5rem;">Reforzado en rodillas con tejido elástico y transpirable.</p>
+                        <div class="card-price">80,00 €</div>
+                        <button class="btn-card">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Segunda Mano (Re-Cúmulo) -->
+        <section class="segunda-mano-section" id="segunda-mano">
+            <h2 class="section-title">Programa Re-Cúmulo (Segunda Mano Cúmulo)</h2>
+            <p class="section-subtitle">Ropa de nuestra propia marca revisada, reparada y lista para continuar la aventura. Si nos devuelves tu prenda antigua Cúmulo, te damos descuento en tu siguiente compra.</p>
+
+            <div class="grid-productos">
+                <!-- Producto 2ª Mano 1 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80" alt="Chaqueta Reacondicionada">
+                    <div class="card-content">
+                        <span class="badge badge-reusado">Estado: Excelente</span>
+                        <h3 class="card-title">Chaqueta Cortavientos "Albuñuelas" (Reacondicionada)</h3>
+                        <p style="font-size:0.85rem; color:#666; margin-bottom: 0.5rem;">Cimarrón de 2023 devuelto por cambio de talla. Cremallera e impermeabilidad comprobadas en taller.</p>
+                        <div class="card-price">45,00 € <span style="font-size:0.8rem; text-decoration:line-through; color:#888;">(95 € nueva)</span></div>
+                        <button class="btn-card">Comprar Segunda Mano</button>
+                    </div>
+                </div>
+
+                <!-- Producto 2ª Mano 2 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80" alt="Mochila Reacondicionada">
+                    <div class="card-content">
+                        <span class="badge badge-reusado">Estado: Muy Bueno</span>
+                        <h3 class="card-title">Mochila Cúmulo 30L (Reparada)</h3>
+                        <p style="font-size:0.85rem; color:#666; margin-bottom: 0.5rem;">Revisada en nuestro taller de Granada. Costuras reforzadas y hebillas totalmente nuevas.</p>
+                        <div class="card-price">35,00 € <span style="font-size:0.8rem; text-decoration:line-through; color:#888;">(70 € nueva)</span></div>
+                        <button class="btn-card">Comprar Segunda Mano</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Pie de Página -->
+    <footer>
+        <p><strong>Cúmulo Mountain Wear SL</strong> - Marca independiente de Granada, España.</p>
+        <p style="margin-top: 0.5rem;">Taller y tienda física: Calle Albaicín, Granada.</p>
+        <p style="margin-top: 1rem; font-size:0.8rem;">&copy; Proyecto escolar para la asignatura de Digitalización.</p>
+    </footer>
+
+</body>
+</html>
+
