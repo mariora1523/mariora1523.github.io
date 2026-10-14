@@ -3,359 +3,770 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cúmulo Mountain Wear | Ropa de Montaña Local y Sostenible</title>
+    <title>MOUNTNEVASI® | Tienda Oficial — Calle Recogida, Granada</title>
     <style>
-        /* Estilos Generales */
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #111111;
+            --text-muted: #555555;
+            --border-color: #e5e5e5;
+            --bg-section: #f7f7f7;
+            --badge-green: #2b7a0b;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: #f8f9fa;
-            color: #2b2d42;
-            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
         }
 
-        /* Encabezado y Navegación */
+        .top-banner {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            font-size: 0.75rem;
+            padding: 0.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
         header {
-            background-color: #1b263b;
-            color: #ffffff;
-            padding: 1rem 2rem;
+            background-color: #fff;
+            border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1.2rem 3rem;
         }
 
         .logo {
             font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            color: #e0e1dd;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #111;
+            text-decoration: none;
         }
 
         .logo span {
-            color: #48cae4;
+            color: #e11d48;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
         }
 
         nav a {
-            color: #e0e1dd;
+            color: #333;
             text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 500;
-            transition: color 0.3s;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         nav a:hover {
-            color: #48cae4;
+            color: #e11d48;
         }
 
-        nav a.segunda-mano-btn {
-            background-color: #2a9d8f;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            color: white;
+        .nav-second-life {
+            color: var(--badge-green) !important;
         }
 
-        nav a.segunda-mano-btn:hover {
-            background-color: #218380;
-        }
-
-        /* Banner Principal */
-        .hero {
-            background: linear-gradient(rgba(27, 38, 59, 0.7), rgba(27, 38, 59, 0.7)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-            height: 60vh;
-            color: white;
+        .hero-TNF {
+            position: relative;
+            height: 70vh;
+            background: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 1rem;
+            align-items: flex-end;
+            padding: 4rem 3rem;
+            color: #fff;
         }
 
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 0.5rem;
+        .hero-TNF::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%);
+            z-index: 1;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 1.5rem;
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
         }
 
-        .btn-main {
-            background-color: #e76f51;
-            color: white;
-            padding: 0.8rem 1.8rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .btn-cta {
+            background-color: #fff;
+            color: #111;
+            padding: 0.9rem 2rem;
+            font-weight: 700;
             text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            display: inline-block;
         }
 
-        .btn-main:hover {
-            background-color: #d65a31;
+        .btn-cta:hover {
+            background-color: #111;
+            color: #fff;
         }
 
-        /* Secciones */
         .container {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 3rem;
         }
 
         .section-title {
-            text-align: center;
             font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #1b263b;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
         }
 
-        .section-subtitle {
-            text-align: center;
-            color: #6c757d;
-            margin-bottom: 2.5rem;
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 3rem;
         }
 
-        /* Sobre la marca */
-        .about-box {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            margin-bottom: 4rem;
-            border-left: 5px solid #2a9d8f;
+        .category-wrapper {
+            margin-bottom: 5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 4rem;
         }
 
-        /* Parrilla de Productos */
-        .grid-productos {
+        /* Cuadrícula de productos */
+        .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 2rem;
         }
 
-        .card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
+        .product-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
+            transition: transform 0.2s;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
-        .card img {
+        .image-container {
+            background-color: var(--bg-section);
+            height: 260px;
             width: 100%;
-            height: 220px;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
         }
 
-        .card-content {
-            padding: 1.5rem;
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #111;
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.3rem 0.6rem;
+        }
+
+        .badge-second {
+            background: var(--badge-green);
+        }
+
+        .product-details {
+            padding: 1.2rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
-        .card-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+        .product-name {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: #111;
         }
 
-        .card-price {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #e76f51;
+        .product-category-tag {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .product-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 0.8rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .product-price {
+            font-weight: 800;
+            font-size: 1.05rem;
+        }
+
+        .old-price {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            margin-left: 0.4rem;
+        }
+
+        .btn-buy-tnf {
+            background: transparent;
+            border: 1px solid #111;
+            color: #111;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-buy-tnf:hover {
+            background: #111;
+            color: #fff;
+        }
+
+        .local-info-box {
+            background-color: var(--bg-section);
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+            margin-bottom: 5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .local-info-box h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
             margin-bottom: 1rem;
         }
 
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.6rem;
-            font-size: 0.8rem;
-            font-weight: bold;
-            border-radius: 4px;
-            margin-bottom: 0.5rem;
-            width: fit-content;
+        .local-info-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
-        .badge-nuevo {
-            background-color: #e0f2fe;
-            color: #0369a1;
-        }
-
-        .badge-reusado {
-            background-color: #d1fae5;
-            color: #047857;
-        }
-
-        .btn-card {
-            margin-top: auto;
-            background-color: #1b263b;
-            color: white;
-            border: none;
-            padding: 0.6rem;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            font-weight: bold;
-        }
-
-        .btn-card:hover {
-            background-color: #415a77;
-        }
-
-        /* Sección Segunda Mano */
-        .segunda-mano-section {
-            background-color: #e8f5e9;
-            padding: 3rem 1.5rem;
-            border-radius: 15px;
-            margin: 4rem 0;
-        }
-
-        /* Pie de Página */
         footer {
-            background-color: #1b263b;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
+            background-color: #111;
+            color: #fff;
+            padding: 4rem 3rem 2rem;
         }
 
-        footer p {
+        .footer-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 3rem;
+        }
+
+        .footer-col h4 {
             font-size: 0.9rem;
-            color: #adb5bd;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.2rem;
+            color: #fff;
+        }
+
+        .footer-col p, .footer-col ul {
+            font-size: 0.85rem;
+            color: #aaa;
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a {
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #777;
+        }
+
+        @media(max-width: 768px) {
+            .local-info-box { grid-template-columns: 1fr; gap: 1.5rem; }
+            header { padding: 1rem 1.5rem; }
+            .container { padding: 2rem 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Encabezado -->
+    <div class="top-banner">
+        Tienda Física Principal: Calle Recogida, n.º 24, Granada | Envío disponible
+    </div>
+
+    <!-- Header -->
     <header>
-        <div class="logo">CÚMULO <span>Outdoor</span></div>
+        <a href="#" class="logo">Mountnevasi<span>.</span></a>
         <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#marca">Nuestra Marca</a>
-            <a href="#nuevos">Colección Nueva</a>
-            <a href="#segunda-mano" class="segunda-mano-btn">Re-Cúmulo (2ª Mano)</a>
+            <a href="#nuevos">Nueva Colección</a>
+            <a href="#second-life" class="nav-second-life">Second Life (2ª Mano)</a>
         </nav>
     </header>
 
-    <!-- Banner Principal -->
-    <section class="hero" id="inicio">
-        <h1>Ropa Técnica Diseñada en Granada</h1>
-        <p>Prendas de montaña sostenibles, creadas para durar y preparadas para una segunda vida.</p>
-        <a href="#nuevos" class="btn-main">Ver Colección</a>
+    <!-- Hero Banner -->
+    <section class="hero-TNF">
+        <div class="hero-content">
+            <h1>Mountnevasi Granada.</h1>
+            <p>Indumentaria y calzado técnico de alta resistencia diseñado y probado en Sierra Nevada. Visítanos en Calle Recogida.</p>
+            <a href="#nuevos" class="btn-cta">Ver Nueva Colección</a>
+        </div>
     </section>
 
     <div class="container">
 
-        <!-- Sobre la Marca Local -->
-        <section class="about-box" id="marca">
-            <h2>Nuestra Filosofía Local</h2>
-            <p><strong>Cúmulo Mountain Wear</strong> es una pequeña marca independiente nacida a los pies de Sierra Nevada, en Granada. No producimos en masa ni seguimos grandes cadenas internacionales. Diseñamos material de montaña ético, resistente al clima más exigente y comprometido con la economía circular.</p>
-        </section>
+        <!-- Info Local en Granada -->
+        <div class="local-info-box">
+            <div>
+                <h3>Nuestra Tienda y Taller<br>en Calle Recogida, Granada</h3>
+            </div>
+            <div>
+                <p>Mountnevasi tiene su sede principal y showroom en plena <strong>Calle Recogida, n.º 24, Granada</strong>. Ven a probarte nuestra equipación técnica de montaña, gorros, polos, chaquetas térmicas, pantalones y calzado especializado con asesoramiento directo.</p>
+            </div>
+        </div>
 
-        <!-- Productos Nuevos -->
-        <section id="nuevos">
-            <h2 class="section-title">Colección Nueva</h2>
-            <p class="section-subtitle">Diseño propio con materiales reciclados y máxima protección térmica.</p>
-            
-            <div class="grid-productos">
-                <!-- Producto 1 -->
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=600&q=80" alt="Chaqueta Técnica">
-                    <div class="card-content">
-                        <span class="badge badge-nuevo">Nueva Colección</span>
-                        <h3 class="card-title">Chaqueta Impermeable "Veleta"</h3>
-                        <p style="font-size:0.9rem; color:#555; margin-bottom: 0.5rem;">Membrana recilada de 3 capas, corta-vientos e impermeable.</p>
-                        <div class="card-price">145,00 €</div>
-                        <button class="btn-card">Añadir al carrito</button>
+        <!-- SECCIÓN 1: NUEVA COLECCIÓN (15 productos nuevos) -->
+        <div id="nuevos" class="category-wrapper">
+            <h2 class="section-title">Nueva Colección</h2>
+            <p class="section-desc">Gorros, polos, chaquetas térmicas, pantalones y zapatillas de última temporada (Entre 20€ y 150€).</p>
+
+            <div class="product-grid">
+                
+                <!-- 1 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge">Novedad</span>
+                        <img src="https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=500&q=80" alt="Gorro">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Accesorio Térmico</span>
+                        <h3 class="product-name">Gorro Merino "Mulhacén"</h3>
+                        <div class="product-bottom">
+                            <span class="product-price">24,00 €</span>
+                            <button class="btn-buy-tnf">Comprar</button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Producto 2 -->
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&w=600&q=80" alt="Forro Polar">
-                    <div class="card-content">
-                        <span class="badge badge-nuevo">Nueva Colección</span>
-                        <h3 class="card-title">Forro Polar Térmico "Mulhacén"</h3>
-                        <p style="font-size:0.9rem; color:#555; margin-bottom: 0.5rem;">Fabricado 100% con plásticos marinos recuperados.</p>
-                        <div class="card-price">65,00 €</div>
-                        <button class="btn-card">Añadir al carrito</button>
+                <!-- 2 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge">Novedad</span>
+                        <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=500&q=80" alt="Gorro polar">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Accesorio Polar</span>
+                        <h3 class="product-name">Gorro Fleece "Veleta"</h3>
+                        <div class="product-bottom">
+                            <span class="product-price">20,00 €</span>
+                            <button class="btn-buy-tnf">Comprar</button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Producto 3 -->
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&w=600&q=80" alt="Pantalón Montaña">
-                    <div class="card-content">
-                        <span class="badge badge-nuevo">Nueva Colección</span>
-                        <h3 class="card-title">Pantalón Trekking "Alpujarra"</h3>
-                        <p style="font-size:0.9rem; color:#555; margin-bottom: 0.5rem;">Reforzado en rodillas con tejido elástico y transpirable.</p>
-                        <div class="card-price">80,00 €</div>
-                        <button class="btn-card">Añadir al carrito</button>
+                <!-- 3 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge">Novedad</span>
+                        <img src="https://images.unsplash.com/photo-1625910513418-7c47fb9ab7eb?auto=format&fit=crop&w=500&q=80" alt="Polo">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Polo Técnico</span>
+                        <h3 class="product-name">Polo Outdoor "Genil"</h3>
+                        <div class="product-bottom">
+                            <span class="product-price">45,00 €</span>
+                            <button class="btn-buy-tnf">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge">Novedad</span>
+                        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=500&q=80" alt="Polo manga corta">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Polo Trekking</span>
+                        <h3 class="product-name">Polo Secado Rápido "Albaicín"</h3>
+                        <div class="product-bottom">
+                            <span class="product-price">40,00 €</span>
+                            <button class="btn-buy-tnf">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge">Novedad</span>
+                        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=500&q=80" alt="Chaqueta térmica">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Chaqueta Térmica</span>
+                        <h3 class="product-name">Chaqueta Aislante "Trevenque"</h3>
+                        <div class="product-bottom">
+                            <span class="product-price">130,00 €</span>
+                            <button class="btn-buy-tnf">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge">Novedad</span>
+                        <img src="https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=500&q=80" alt="Plumas ligero">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Chaqueta Térmica</span>
+                        <h3 class="product-name">Slim Down Jacket "Alpujarra"</h3>
+                        <div class="product-bottom">
+                            <span class="product-price">145,00 €</span>
+                            <button class="btn-buy-tnf">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge">Novedad</span>
+                        <img src="https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=500&q=80" alt="Softshell">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Chaqueta Térmica</span>
+                        <h3 class="product-name">Softshell Fleece "Cahorros"</h3>
+                        <div class="product-bottom">
+                            <span class="product-price">115,00 €</span>
+                            <button class="btn-buy-tnf">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge">Novedad</span>
+                        <img src="https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&w=500&q=80" alt="Pantalón montaña">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Pantalón Trekking</span>
+                        <h3 class="product-name">Pantalón Elástico "Sierra"</h3>
+                        <div class="product-bottom">
+                            <span class="product-price">75,00 €</span>
+                            <button class="btn-buy-tnf">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge">Novedad</span>
+                        <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=500&q=80" alt="Pantalón invierno">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Pantalón Térmico</span>
+                        <h3 class="product-name">Pantalón Forrado "Monachil"</h3>
+                        <div class="product-bottom">
+                            <span class="product-price">95,00 €</span>
+                            <button class="btn-buy-tnf">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge">Novedad</span>
+                        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=500&q=80" alt="Pantalón desmontable">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Pantalón Desmontable</span>
+                        <h3 class="product-name">Pantalón Convertible "Lecrín"</h3>
+                        <div class="product-bottom">
+                            <span class="product-price">80,00 €</span>
+                            <button class="btn-buy-tnf">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge">Novedad</span>
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80" alt="Zapatillas trail">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Zapatillas Trail</span>
+                        <h3 class="product-name">Zapatilla Trail "Padul Grip"</h3>
+                        <div class="product-bottom">
+                            <span class="product-price">110,00 €</span>
+                            <button class="btn-buy-tnf">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge">Novedad</span>
+                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=500&q=80" alt="Zapatillas senderismo">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Zapatillas Senderismo</span>
+                        <h3 class="product-name">Zapatilla Hiking "Dúdar"</h3>
+                        <div class="product-bottom">
+                            <span class="product-price">95,00 €</span>
+                            <button class="btn-buy-tnf">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge">Novedad</span>
+                        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=500&q=80" alt="Zapatillas impermeables">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Zapatillas Waterproof</span>
+                        <h3 class="product-name">Zapatilla Impermeable "Gójar"</h3>
+                        <div class="product-bottom">
+                            <span class="product-price">125,00 €</span>
+                            <button class="btn-buy-tnf">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge">Novedad</span>
+                        <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=500&q=80" alt="Zapatillas running">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Zapatillas Running</span>
+                        <h3 class="product-name">Zapatilla Skyrunning "Güéjar"</h3>
+                        <div class="product-bottom">
+                            <span class="product-price">120,00 €</span>
+                            <button class="btn-buy-tnf">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge">Novedad</span>
+                        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=500&q=80" alt="Polo manga larga">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Polo Manga Larga</span>
+                        <h3 class="product-name">Polo Térmico "Pinos"</h3>
+                        <div class="product-bottom">
+                            <span class="product-price">50,00 €</span>
+                            <button class="btn-buy-tnf">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2: APARTADO APARTE DE ROPA DE SEGUNDA MANO (5 productos) -->
+        <div id="second-life" class="category-wrapper" style="border: none;">
+            <h2 class="section-title" style="color: var(--badge-green);">Mountnevasi Second Life (Ropa de Segunda Mano)</h2>
+            <p class="section-desc">Apartado exclusivo de prendas y calzado oficial reacondicionados en nuestro taller de la Calle Recogida con precios rebajados.</p>
+
+            <div class="product-grid">
+                <!-- 16 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge badge-second">2ª Mano</span>
+                        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=500&q=80" alt="Chaqueta 2a mano">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Reacondicionado Taller</span>
+                        <h3 class="product-name">Chaqueta "Trevenque" (Re-Wear)</h3>
+                        <div class="product-bottom">
+                            <div>
+                                <span class="product-price">75,00 €</span>
+                                <span class="old-price">130 €</span>
+                            </div>
+                            <button class="btn-buy-tnf" style="border-color: var(--badge-green); color: var(--badge-green);">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 17 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge badge-second">2ª Mano</span>
+                        <img src="https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&w=500&q=80" alt="Pantalón 2a mano">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Reacondicionado Taller</span>
+                        <h3 class="product-name">Pantalón "Sierra" (Uso Leve)</h3>
+                        <div class="product-bottom">
+                            <div>
+                                <span class="product-price">40,00 €</span>
+                                <span class="old-price">75 €</span>
+                            </div>
+                            <button class="btn-buy-tnf" style="border-color: var(--badge-green); color: var(--badge-green);">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 18 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge badge-second">2ª Mano</span>
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80" alt="Zapatillas 2a mano">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Reacondicionado Taller</span>
+                        <h3 class="product-name">Zapatilla "Padul" (Revisada)</h3>
+                        <div class="product-bottom">
+                            <div>
+                                <span class="product-price">60,00 €</span>
+                                <span class="old-price">110 €</span>
+                            </div>
+                            <button class="btn-buy-tnf" style="border-color: var(--badge-green); color: var(--badge-green);">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 19 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge badge-second">2ª Mano</span>
+                        <img src="https://images.unsplash.com/photo-1625910513418-7c47fb9ab7eb?auto=format&fit=crop&w=500&q=80" alt="Polo 2a mano">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Reacondicionado Taller</span>
+                        <h3 class="product-name">Polo "Genil" (Grado A)</h3>
+                        <div class="product-bottom">
+                            <div>
+                                <span class="product-price">22,00 €</span>
+                                <span class="old-price">45 €</span>
+                            </div>
+                            <button class="btn-buy-tnf" style="border-color: var(--badge-green); color: var(--badge-green);">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 20 -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <span class="product-badge badge-second">2ª Mano</span>
+                        <img src="https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=500&q=80" alt="Plumas 2a mano">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category-tag">Reacondicionado Taller</span>
+                        <h3 class="product-name">Slim Down "Alpujarra" (Re-Wear)</h3>
+                        <div class="product-bottom">
+                            <div>
+                                <span class="product-price">85,00 €</span>
+                                <span class="old-price">145 €</span>
+                            </div>
+                            <button class="btn-buy-tnf" style="border-color: var(--badge-green); color: var(--badge-green);">Comprar</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Sección Segunda Mano (Re-Cúmulo) -->
-        <section class="segunda-mano-section" id="segunda-mano">
-            <h2 class="section-title">Programa Re-Cúmulo (Segunda Mano Cúmulo)</h2>
-            <p class="section-subtitle">Ropa de nuestra propia marca revisada, reparada y lista para continuar la aventura. Si nos devuelves tu prenda antigua Cúmulo, te damos descuento en tu siguiente compra.</p>
-
-            <div class="grid-productos">
-                <!-- Producto 2ª Mano 1 -->
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80" alt="Chaqueta Reacondicionada">
-                    <div class="card-content">
-                        <span class="badge badge-reusado">Estado: Excelente</span>
-                        <h3 class="card-title">Chaqueta Cortavientos "Albuñuelas" (Reacondicionada)</h3>
-                        <p style="font-size:0.85rem; color:#666; margin-bottom: 0.5rem;">Cimarrón de 2023 devuelto por cambio de talla. Cremallera e impermeabilidad comprobadas en taller.</p>
-                        <div class="card-price">45,00 € <span style="font-size:0.8rem; text-decoration:line-through; color:#888;">(95 € nueva)</span></div>
-                        <button class="btn-card">Comprar Segunda Mano</button>
-                    </div>
-                </div>
-
-                <!-- Producto 2ª Mano 2 -->
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80" alt="Mochila Reacondicionada">
-                    <div class="card-content">
-                        <span class="badge badge-reusado">Estado: Muy Bueno</span>
-                        <h3 class="card-title">Mochila Cúmulo 30L (Reparada)</h3>
-                        <p style="font-size:0.85rem; color:#666; margin-bottom: 0.5rem;">Revisada en nuestro taller de Granada. Costuras reforzadas y hebillas totalmente nuevas.</p>
-                        <div class="card-price">35,00 € <span style="font-size:0.8rem; text-decoration:line-through; color:#888;">(70 € nueva)</span></div>
-                        <button class="btn-card">Comprar Segunda Mano</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
 
     </div>
 
-    <!-- Pie de Página -->
+    <!-- Footer -->
     <footer>
-        <p><strong>Cúmulo Mountain Wear SL</strong> - Marca independiente de Granada, España.</p>
-        <p style="margin-top: 0.5rem;">Taller y tienda física: Calle Albaicín, Granada.</p>
-        <p style="margin-top: 1rem; font-size:0.8rem;">&copy; Proyecto escolar para la asignatura de Digitalización.</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Mountnevasi®</h4>
+                <p>Indumentaria alpina y calzado técnico de alta resistencia.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Ubicación Física</h4>
+                <p>Calle Recogida, n.º 24</p>
+                <p>18005 Granada, España</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <p>Teléfono: +34 958 123 456</p>
+                <p>Email: contacto@mountnevasi.es</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mountnevasi. Proyecto para la asignatura de Digitalización.</p>
+        </div>
     </footer>
 
 </body>
-</html>
-
+</html>       
